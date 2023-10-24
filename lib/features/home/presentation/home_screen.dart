@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_test_project/core_d_i.dart';
 
-import 'package:flutter_test_project/features/home/data/bloc/user/bloc.dart';
-import 'package:flutter_test_project/features/home/data/bloc/user/events.dart';
+import 'package:flutter_test_project/features/home/data/bloc/bloc.dart';
+import 'package:flutter_test_project/features/home/data/bloc/events.dart';
 
-import 'package:flutter_test_project/features/home/data/bloc/user/states.dart';
+import 'package:flutter_test_project/features/home/data/bloc/states.dart';
 import 'package:flutter_test_project/features/home/presentation/widgets/tinder_builder.dart';
 import 'package:flutter_test_project/features/home/presentation/widgets/tinder_card.dart';
 
@@ -47,11 +47,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemCount: data.listUsers.length,
                       itemBuilder:
                           (BuildContext context, int index, int realIndex) {
-                        print(index);
+                        print('$index Индекс юзера');
                         return TinderCard(
                           id: data.listUsers[index].id,
                           name: data.listUsers[index].name,
                           company: data.listUsers[index].company.name,
+                          userData: data.listUsers[index],
                           albumsUrl: data.listAlbums.where(
                             (element) => index + 1 == (element.userId),
                           ),

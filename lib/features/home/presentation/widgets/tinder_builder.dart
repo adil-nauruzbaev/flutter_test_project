@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test_project/core_d_i.dart';
-import 'package:flutter_test_project/features/home/data/bloc/user/bloc.dart';
-import 'package:flutter_test_project/features/home/data/bloc/user/states.dart';
+import 'package:flutter_test_project/features/home/data/bloc/bloc.dart';
+import 'package:flutter_test_project/features/home/data/bloc/states.dart';
 
 class TinderBuilder extends StatelessWidget {
   const TinderBuilder({super.key, required this.builder});

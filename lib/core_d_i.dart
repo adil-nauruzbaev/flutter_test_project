@@ -1,4 +1,4 @@
-import 'package:flutter_test_project/features/home/data/bloc/user/bloc.dart';
+import 'package:flutter_test_project/features/home/data/bloc/bloc.dart';
 import 'package:flutter_test_project/features/home/data/source/album_api.dart';
 import 'package:flutter_test_project/features/home/data/source/photo_api.dart';
 import 'package:flutter_test_project/features/home/data/source/user_api.dart';
@@ -23,10 +23,4 @@ class CoreDi {
       ),
     );
   }
-
-//read data which is NOT accessible without auth
-  static Future<void> initProtected() async {}
-
-//read data which IS accessible without auth
-  static Future<void> initUnprotected() async {}
 }
