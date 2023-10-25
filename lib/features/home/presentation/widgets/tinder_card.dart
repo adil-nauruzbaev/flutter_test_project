@@ -42,6 +42,10 @@ class _TinderCardState extends State<TinderCard> {
           widget.userData.phone,
           widget.userData.website,
           widget.userData.username,
+          widget.userData.address.street,
+          widget.userData.address.suite,
+          widget.userData.address.city,
+          widget.userData.address.zipcode,
         );
       },
       child: Padding(
@@ -98,6 +102,10 @@ class _TinderCardState extends State<TinderCard> {
     String phone,
     String website,
     String username,
+    String street,
+    String suite,
+    String city,
+    String zipcode,
   ) {
     showGeneralDialog(
         context: context,
@@ -114,6 +122,7 @@ class _TinderCardState extends State<TinderCard> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Stack(
+                    alignment: AlignmentDirectional.bottomStart,
                     children: [
                       CarouselSlider.builder(
                         itemCount: imageUrl.length,
@@ -146,13 +155,11 @@ class _TinderCardState extends State<TinderCard> {
                         ),
                       ),
                       Container(
-                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * 0.25,
                         padding: const EdgeInsets.all(32),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        child: ListView(
+                          shrinkWrap: true,
                           children: [
-                            const Spacer(),
                             TextWidget(
                               data: name,
                               fontSize: 32,
@@ -175,6 +182,22 @@ class _TinderCardState extends State<TinderCard> {
                             ),
                             TextWidget(
                               data: website,
+                              fontSize: 16,
+                            ),
+                            TextWidget(
+                              data: street,
+                              fontSize: 16,
+                            ),
+                            TextWidget(
+                              data: suite,
+                              fontSize: 16,
+                            ),
+                            TextWidget(
+                              data: city,
+                              fontSize: 16,
+                            ),
+                            TextWidget(
+                              data: zipcode,
                               fontSize: 16,
                             ),
                           ],
