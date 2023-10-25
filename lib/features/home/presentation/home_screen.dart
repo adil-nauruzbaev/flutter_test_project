@@ -10,7 +10,6 @@ import 'package:flutter_test_project/features/home/data/bloc/states.dart';
 import 'package:flutter_test_project/features/home/presentation/widgets/tinder_builder.dart';
 import 'package:flutter_test_project/features/home/presentation/widgets/tinder_card.dart';
 
-// ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -57,8 +56,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             (element) => index + 1 == (element.userId),
                           ),
                           photosUrl: data.listPhotos.where((element) =>
-                              data.listAlbums.where(
-                                  (element) => index + 1 == (element.id)).first.id == (element.albumId)),
+                              data.listAlbums
+                                  .where((element) => index + 1 == (element.id))
+                                  .first
+                                  .id ==
+                              (element.albumId)),
                         );
                       },
                     ),
